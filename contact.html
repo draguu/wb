@@ -164,21 +164,18 @@ document.getElementById('contact-form').addEventListener('submit', async functio
   document.getElementById('submit-btn').disabled = true;
 
   try {
-    const res = await fetch('https://api.web3forms.com/submit', {
+    const res = await fetch('https://formspree.io/f/mlgznvay', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
       body: JSON.stringify({
-        access_key: 'YOUR_WEB3FORMS_KEY', // ← replace with key from web3forms.com
         name: name.value,
         email: email.value,
         message: message.value,
-        source: document.getElementById('source').value,
-        subject: 'New project inquiry from ' + name.value,
-        from_name: 'Weybec Website'
+        source: document.getElementById('source').value
       })
     });
     const data = await res.json();
-    if (data.success) {
+    if (data.ok) {
       document.getElementById('contact-form').style.display = 'none';
       document.getElementById('success-msg').style.display = 'block';
       if (window.lucide) lucide.createIcons();
