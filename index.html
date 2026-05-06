@@ -14,70 +14,67 @@
 <div id="nav-placeholder"></div>
 
 <!-- HERO -->
-<section class="min-h-screen flex items-center pt-24 pb-16 relative overflow-hidden">
-  <div style="position:absolute;top:-120px;right:-120px;width:500px;height:500px;background:radial-gradient(circle,rgba(34,197,94,0.08) 0%,transparent 65%);pointer-events:none;"></div>
-  <div style="position:absolute;inset:0;background-image:linear-gradient(#0000000a 1px,transparent 1px),linear-gradient(90deg,#0000000a 1px,transparent 1px);background-size:40px 40px;pointer-events:none;"></div>
-  <div class="max-w-7xl mx-auto px-6 w-full">
-    <div class="grid md:grid-cols-2 gap-16 items-center">
-      <div>
-        <div class="pill fade-in mb-8" style="animation-delay:0s">
-          <span class="pulse-dot"></span>
-          Available for new projects
-        </div>
-        <h1 style="font-size:clamp(3rem,6vw,5rem);line-height:1.05;font-weight:900;color:var(--ink);margin-bottom:1.5rem;">
-          <span class="hero-line"><span>We Bring</span></span>
-          <span class="hero-line"><span style="color:var(--green);">Imagination</span></span>
-          <span class="hero-line"><span>to Life.</span></span>
-        </h1>
-        <p class="fade-in text-gray-500 text-lg leading-relaxed max-w-md mb-10" style="animation-delay:0.4s">
-          Weybec is a premium CGI animation studio crafting stunning 3D ad films, character animation, and kids content — 100% Blender-native.
-        </p>
-        <div class="fade-in flex flex-wrap gap-4" style="animation-delay:0.6s">
-          <button onclick="openReel()" class="btn-primary" style="border:none;cursor:pointer;">
-            <i data-lucide="play" style="width:16px;height:16px;fill:currentColor;"></i>
-            Watch Showreel
-          </button>
-          <a href="work.html" class="btn-outline">View Portfolio</a>
-        </div>
-        <div class="fade-in flex gap-8 mt-12 pt-8 border-t border-gray-100" style="animation-delay:0.8s">
-          <div>
-            <div class="stat-num">10+</div>
-            <div class="text-sm text-gray-400 font-medium mt-1">Years of Magic</div>
-          </div>
-          <div style="width:1px;background:#e5e7eb;"></div>
-          <div>
-            <div class="stat-num">200+</div>
-            <div class="text-sm text-gray-400 font-medium mt-1">Projects Delivered</div>
-          </div>
-          <div style="width:1px;background:#e5e7eb;"></div>
-          <div>
-            <div class="stat-num">100%</div>
-            <div class="text-sm text-gray-400 font-medium mt-1">Blender Native</div>
-          </div>
-        </div>
+<section style="min-height:100vh;position:relative;overflow:hidden;display:flex;align-items:center;">
+
+  <!-- VIDEO BACKGROUND -->
+  <div style="position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden;">
+    <iframe id="yt-bg-iframe"
+      src="https://www.youtube.com/embed/UlwfCi7xL7M?autoplay=1&mute=1&loop=1&playlist=UlwfCi7xL7M&controls=0&disablekb=1&fs=0&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3"
+      style="position:absolute;top:50%;left:50%;width:177.78vh;height:100vh;min-width:100%;min-height:56.25vw;transform:translate(-50%,-50%);border:none;"
+      allow="autoplay; encrypted-media">
+    </iframe>
+    <!-- Dark overlay -->
+    <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,0,0,0.75) 0%,rgba(0,0,0,0.45) 100%);"></div>
+    <div style="position:absolute;bottom:0;left:0;right:0;height:40%;background:linear-gradient(to top,rgba(34,197,94,0.07),transparent);"></div>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="max-w-7xl mx-auto px-6 w-full" style="position:relative;z-index:1;padding-top:9rem;padding-bottom:5rem;">
+    <div class="max-w-3xl">
+      <div class="pill fade-in mb-8" style="animation-delay:0s;background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.2);color:#fff;backdrop-filter:blur(8px);">
+        <span class="pulse-dot"></span>
+        Available for new projects
       </div>
-      <div class="fade-in" style="animation-delay:0.3s">
-        <div class="play-card" style="aspect-ratio:4/5;cursor:pointer;" onclick="openReel()">
-          <div style="position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop') center/cover;opacity:0.55;"></div>
-          <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(15,26,15,0.5),rgba(34,197,94,0.1));"></div>
-          <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;">
-            <div class="play-btn">
-              <svg width="20" height="22" viewBox="0 0 20 22" fill="none"><path d="M2 1.5L18.5 11L2 20.5V1.5Z" fill="white"/></svg>
-            </div>
-          </div>
-          <div style="position:absolute;bottom:0;left:0;right:0;padding:1.5rem;background:linear-gradient(to top,rgba(0,0,0,0.6),transparent);">
-            <div class="pill" style="background:rgba(255,255,255,0.15);border-color:rgba(255,255,255,0.3);color:#fff;backdrop-filter:blur(8px);">
-              Showreel 2026
-            </div>
-            <div style="margin-top:10px;height:3px;background:rgba(255,255,255,0.2);border-radius:99px;overflow:hidden;">
-              <div style="width:33%;height:100%;background:var(--green);border-radius:99px;"></div>
-            </div>
-          </div>
-          <div style="position:absolute;top:1rem;right:1rem;font-size:1.3rem;opacity:0.5;">🐸</div>
+      <h1 class="fade-in" style="font-size:clamp(3rem,7vw,6rem);line-height:1.02;font-weight:900;color:#fff;margin-bottom:1.5rem;animation-delay:0.15s;">
+        <span style="display:block;">We Bring</span>
+        <span style="display:block;color:var(--green);">Imagination</span>
+        <span style="display:block;">to Life.</span>
+      </h1>
+      <p class="fade-in" style="color:rgba(255,255,255,0.75);font-size:1.15rem;line-height:1.7;max-width:520px;margin-bottom:2.5rem;animation-delay:0.3s;">
+        A premium CGI animation studio crafting stunning 3D ad films, character animation, and kids content — 100% Blender-native.
+      </p>
+      <div class="fade-in flex flex-wrap gap-4" style="animation-delay:0.45s;">
+        <button onclick="openReel()" class="btn-primary" style="border:none;cursor:pointer;background:var(--green);">
+          <i data-lucide="play" style="width:16px;height:16px;fill:currentColor;"></i>
+          Watch Showreel
+        </button>
+        <a href="work.html" class="btn-outline" style="color:#fff;border-color:rgba(255,255,255,0.4);background:rgba(255,255,255,0.08);backdrop-filter:blur(8px);">View Portfolio</a>
+      </div>
+      <div class="fade-in flex gap-10 mt-14 pt-8" style="border-top:1px solid rgba(255,255,255,0.15);animation-delay:0.6s;">
+        <div>
+          <div class="stat-num" style="color:#fff;">10+</div>
+          <div style="font-size:0.85rem;color:rgba(255,255,255,0.5);font-weight:500;margin-top:4px;">Years of Magic</div>
+        </div>
+        <div style="width:1px;background:rgba(255,255,255,0.15);"></div>
+        <div>
+          <div class="stat-num" style="color:#fff;">200+</div>
+          <div style="font-size:0.85rem;color:rgba(255,255,255,0.5);font-weight:500;margin-top:4px;">Projects Delivered</div>
+        </div>
+        <div style="width:1px;background:rgba(255,255,255,0.15);"></div>
+        <div>
+          <div class="stat-num" style="color:#fff;">100%</div>
+          <div style="font-size:0.85rem;color:rgba(255,255,255,0.5);font-weight:500;margin-top:4px;">Blender Native</div>
         </div>
       </div>
     </div>
   </div>
+
+  <!-- Scroll indicator -->
+  <div class="fade-in" style="position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);z-index:1;display:flex;flex-direction:column;align-items:center;gap:6px;animation-delay:1s;">
+    <span style="color:rgba(255,255,255,0.4);font-size:0.72rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;">Scroll</span>
+    <div style="width:1px;height:32px;background:linear-gradient(to bottom,rgba(255,255,255,0.4),transparent);"></div>
+  </div>
+
 </section>
 
 <!-- MARQUEE -->
