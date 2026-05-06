@@ -33,10 +33,10 @@
           Weybec is a premium CGI animation studio crafting stunning 3D ad films, character animation, and kids content — 100% Blender-native.
         </p>
         <div class="fade-in flex flex-wrap gap-4" style="animation-delay:0.6s">
-          <a href="work.html" class="btn-primary">
+          <button onclick="openReel()" class="btn-primary" style="border:none;cursor:pointer;">
             <i data-lucide="play" style="width:16px;height:16px;fill:currentColor;"></i>
-            View Showreel
-          </a>
+            Watch Showreel
+          </button>
           <a href="work.html" class="btn-outline">View Portfolio</a>
         </div>
         <div class="fade-in flex gap-8 mt-12 pt-8 border-t border-gray-100" style="animation-delay:0.8s">
@@ -57,7 +57,7 @@
         </div>
       </div>
       <div class="fade-in" style="animation-delay:0.3s">
-        <div class="play-card" style="aspect-ratio:4/5;">
+        <div class="play-card" style="aspect-ratio:4/5;cursor:pointer;" onclick="openReel()">
           <div style="position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop') center/cover;opacity:0.55;"></div>
           <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(15,26,15,0.5),rgba(34,197,94,0.1));"></div>
           <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;">
@@ -250,7 +250,31 @@
 </section>
 
 <div id="footer-placeholder"></div>
+
+<!-- SHOWREEL LIGHTBOX -->
+<div id="reel-lightbox" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.93);z-index:9999;align-items:center;justify-content:center;padding:1rem;" onclick="closeReel(event)">
+  <div style="position:relative;width:100%;max-width:960px;">
+    <button onclick="closeReel()" style="position:absolute;top:-44px;right:0;background:none;border:none;color:#fff;font-size:2rem;cursor:pointer;line-height:1;padding:4px 10px;">&times;</button>
+    <iframe id="reel-iframe" src="" style="width:100%;aspect-ratio:16/9;border:none;border-radius:14px;" allowfullscreen allow="autoplay"></iframe>
+  </div>
+</div>
+
 <script src="https://unpkg.com/lucide@latest"></script>
 <script src="js/shared.js"></script>
+<script>
+function openReel() {
+  const lb = document.getElementById('reel-lightbox');
+  document.getElementById('reel-iframe').src = 'https://www.youtube.com/embed/UlwfCi7xL7M?autoplay=1';
+  lb.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+function closeReel(e) {
+  if (e && e.target !== document.getElementById('reel-lightbox') && !e.target.closest('button')) return;
+  document.getElementById('reel-lightbox').style.display = 'none';
+  document.getElementById('reel-iframe').src = '';
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeReel({target: document.getElementById('reel-lightbox')}); });
+</script>
 </body>
 </html>
