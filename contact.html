@@ -164,27 +164,29 @@ document.getElementById('contact-form').addEventListener('submit', async functio
   document.getElementById('submit-btn').disabled = true;
 
   try {
-    const formData = new FormData();
-    formData.append('name', name.value);
-    formData.append('email', email.value);
-    formData.append('message', message.value);
-    formData.append('source', document.getElementById('source').value);
-    formData.append('_replyto', email.value);
-    formData.append('_subject', 'New project inquiry from ' + name.value);
-
-    const res = await fetch('https://formspree.io/f/contact@weybec.com', {
-      method: 'POST', body: formData, headers: { 'Accept': 'application/json' }
+    const res = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        access_key: 'YOUR_WEB3FORMS_KEY', // ← replace with key from web3forms.com
+        name: name.value,
+        email: email.value,
+        message: message.value,
+        source: document.getElementById('source').value,
+        subject: 'New project inquiry from ' + name.value,
+        from_name: 'Weybec Website'
+      })
     });
-
-    // Show success regardless (Formspree may require setup; fallback to mailto)
-    document.getElementById('contact-form').style.display = 'none';
-    document.getElementById('success-msg').style.display = 'block';
-    if (window.lucide) lucide.createIcons();
-
+    const data = await res.json();
+    if (data.success) {
+      document.getElementById('contact-form').style.display = 'none';
+      document.getElementById('success-msg').style.display = 'block';
+      if (window.lucide) lucide.createIcons();
+    } else { throw new Error('failed'); }
   } catch(err) {
-    // Fallback: open mailto
+    // Fallback: mailto
     const subject = encodeURIComponent('Project inquiry from ' + name.value);
-    const body = encodeURIComponent('Name: ' + name.value + '\nEmail: ' + email.value + '\n\n' + message.value);
+    const body = encodeURIComponent('Name: ' + name.value + '\nEmail: ' + email.value + '\n\nHow they found us: ' + document.getElementById('source').value + '\n\n' + message.value);
     window.location.href = 'mailto:contact@weybec.com?subject=' + subject + '&body=' + body;
   }
 });

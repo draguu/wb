@@ -6,9 +6,9 @@ const NAV_HTML = `
       <img src="assets/weybec_logo_website.png" alt="Weybec Studios" style="height:52px;width:auto;display:block;">
     </a>
     <div class="hidden md:flex items-center gap-8">
-      <a href="work.html"     class="nav-link text-sm font-medium text-gray-500 hover:text-green-600 transition-colors">Work</a>
-      <a href="services.html" class="nav-link text-sm font-medium text-gray-500 hover:text-green-600 transition-colors">Services</a>
-      <a href="about.html"    class="nav-link text-sm font-medium text-gray-500 hover:text-green-600 transition-colors">Studio</a>
+      <a href="work.html"     class="nav-link text-sm font-medium text-gray-300 hover:text-green-400 transition-colors">Work</a>
+      <a href="services.html" class="nav-link text-sm font-medium text-gray-300 hover:text-green-400 transition-colors">Services</a>
+      <a href="about.html"    class="nav-link text-sm font-medium text-gray-300 hover:text-green-400 transition-colors">Studio</a>
       <a href="contact.html"  class="btn-primary text-sm" style="padding:10px 22px;">Start a Project</a>
     </div>
     <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors">
@@ -16,10 +16,10 @@ const NAV_HTML = `
       <i data-lucide="x"    id="icon-x"    class="w-5 h-5 hidden"></i>
     </button>
   </div>
-  <div id="mobile-menu" style="display:none;" class="flex-col gap-3 px-6 pt-4 pb-6 bg-white border-t border-gray-100 md:hidden">
-    <a href="work.html"     class="block py-2 font-medium text-gray-600">Work</a>
-    <a href="services.html" class="block py-2 font-medium text-gray-600">Services</a>
-    <a href="about.html"    class="block py-2 font-medium text-gray-600">Studio</a>
+  <div id="mobile-menu" style="display:none;" class="flex-col gap-3 px-6 pt-4 pb-6 border-t md:hidden">
+    <a href="work.html"     class="block py-2 font-medium text-gray-200">Work</a>
+    <a href="services.html" class="block py-2 font-medium text-gray-200">Services</a>
+    <a href="about.html"    class="block py-2 font-medium text-gray-200">Studio</a>
     <a href="contact.html"  class="btn-primary mt-2" style="justify-content:center;display:flex;">Start a Project</a>
   </div>
 </nav>`;
