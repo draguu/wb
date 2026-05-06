@@ -3,7 +3,7 @@ const NAV_HTML = `
 <nav id="navbar" class="py-5">
   <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
     <a href="index.html" class="flex items-center">
-      <img src="assets/weybec_logo_website.png" alt="Weybec Studios" style="height:52px;width:auto;display:block;">
+      <img src="assets/weybec_logo_website.png" alt="Weybec Studios" style="height:52px;width:auto;display:block;mix-blend-mode:multiply;">
     </a>
     <div class="hidden md:flex items-center gap-8">
       <a href="work.html"     class="nav-link text-sm font-medium text-gray-500 hover:text-green-600 transition-colors">Work</a>
@@ -30,7 +30,7 @@ const FOOTER_HTML = `
     <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
       <div>
         <div style="margin-bottom:1rem;">
-          <img src="assets/weybec_logo_website.png" alt="Weybec Studios" style="height:44px;width:auto;">
+          <img src="assets/weybec_logo_website.png" alt="Weybec Studios" style="height:44px;width:auto;mix-blend-mode:multiply;">
         </div>
         <p class="text-sm text-gray-400 leading-relaxed mb-4">A premium CGI animation studio dedicated to visual excellence. 100% Blender-native.</p>
         <div style="display:flex;gap:14px;align-items:center;">
