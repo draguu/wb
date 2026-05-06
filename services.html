@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services — Weybec Studio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/shared.css">
+  <style>
+    .service-hero-card {
+      background: var(--green-pale);
+      border: 1px solid #bbf7d0;
+      border-radius: 24px;
+      padding: 3rem;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s;
+    }
+    .service-hero-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 60px rgba(34,197,94,0.12);
+    }
+    .service-hero-card .big-icon {
+      font-size: 3.5rem;
+      margin-bottom: 1.5rem;
+      display: block;
+    }
+    .price-tag {
+      display: inline-block;
+      padding: 6px 16px;
+      border-radius: 99px;
+      background: var(--ink);
+      color: #fff;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+    .feature-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+      font-size: 0.9rem;
+      color: #374151;
+    }
+    .feature-list li:last-child { border-bottom: none; }
+    .feature-list li .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); flex-shrink: 0; margin-top: 6px; }
+    .tech-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 6px 14px;
+      border-radius: 10px;
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--ink);
+      transition: all 0.2s;
+    }
+    .tech-badge:hover { border-color: var(--green); color: var(--green-mid); }
+  </style>
+</head>
+<body>
+<div class="frog-mark">🐸</div>
+<div id="nav-placeholder"></div>
+
+<!-- HERO -->
+<section style="padding:10rem 0 5rem;background:#fff;position:relative;overflow:hidden;">
+  <div style="position:absolute;top:-80px;right:-80px;width:400px;height:400px;background:radial-gradient(circle,rgba(34,197,94,0.07) 0%,transparent 65%);"></div>
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="max-w-3xl reveal">
+      <div class="section-label">Services</div>
+      <h1 style="font-size:clamp(3rem,7vw,5rem);font-weight:900;line-height:1.05;color:var(--ink);margin-bottom:1.5rem;">What We<br><span style="color:var(--green);">Create</span></h1>
+      <p class="text-gray-400 text-xl leading-relaxed">A full-spectrum CGI animation studio. From concept to final render — we handle it all with a 100% Blender-native pipeline.</p>
+    </div>
+  </div>
+</section>
+
+<!-- MAIN SERVICES -->
+<section style="padding:4rem 0 6rem;background:#fff;">
+  <div class="max-w-7xl mx-auto px-6">
+    
+    <!-- Service 1: 3D Ad Films -->
+    <div class="grid lg:grid-cols-2 gap-16 items-center mb-28 reveal">
+      <div>
+        <div class="section-label">01 — Core Service</div>
+        <h2 style="font-size:clamp(2rem,4vw,3rem);font-weight:900;line-height:1.1;color:var(--ink);margin-bottom:1.25rem;">3D Ad Films &<br>Product Visualization</h2>
+        <p class="text-gray-400 leading-relaxed mb-6">Cinematic CGI ad films that make your product the hero. We handle everything from storyboard to final color grade — no third-party renders, no surprises.</p>
+        <ul class="feature-list" style="list-style:none;padding:0;margin:0 0 2rem;">
+          <li><span class="dot"></span>Full 3D product modeling and texturing</li>
+          <li><span class="dot"></span>Cinematic lighting and compositing</li>
+          <li><span class="dot"></span>Character integration and performance</li>
+          <li><span class="dot"></span>TV-commercial and social media formats</li>
+          <li><span class="dot"></span>360° product turntables and hero shots</li>
+        </ul>
+        <a href="contact.html" class="btn-primary">Get a Quote <i data-lucide="arrow-right" style="width:15px;height:15px;"></i></a>
+      </div>
+      <div>
+        <div style="aspect-ratio:4/3;border-radius:24px;overflow:hidden;position:relative;background:#1a1a1a;">
+          <div style="position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2000&auto=format&fit=crop') center/cover;opacity:0.65;"></div>
+          <div style="position:absolute;bottom:1.5rem;left:1.5rem;">
+            <div class="pill" style="background:rgba(255,255,255,0.15);border-color:rgba(255,255,255,0.3);color:#fff;backdrop-filter:blur(8px);">Neon Horizon — Automotive</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Service 2: Kids Content -->
+    <div class="grid lg:grid-cols-2 gap-16 items-center mb-28 reveal">
+      <div class="order-2 lg:order-1">
+        <div style="aspect-ratio:4/3;border-radius:24px;overflow:hidden;position:relative;background:#1a1a1a;">
+          <div style="position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=2000&auto=format&fit=crop') center/cover;opacity:0.65;"></div>
+          <div style="position:absolute;bottom:1.5rem;left:1.5rem;">
+            <div class="pill" style="background:rgba(255,255,255,0.15);border-color:rgba(255,255,255,0.3);color:#fff;backdrop-filter:blur(8px);">Kiddo Kiddy — Kids Series</div>
+          </div>
+        </div>
+      </div>
+      <div class="order-1 lg:order-2">
+        <div class="section-label">02 — Core Service</div>
+        <h2 style="font-size:clamp(2rem,4vw,3rem);font-weight:900;line-height:1.1;color:var(--ink);margin-bottom:1.25rem;">Kids Content &<br>Educational Animation</h2>
+        <p class="text-gray-400 leading-relaxed mb-6">CoComelon-grade nursery rhyme series, educational content, and character-driven kids shows pitched to global platforms including Moonbug, LooLoo Kids, and YouTube Kids.</p>
+        <ul class="feature-list" style="list-style:none;padding:0;margin:0 0 2rem;">
+          <li><span class="dot"></span>Original character design and rigging</li>
+          <li><span class="dot"></span>Nursery rhyme and song animation</li>
+          <li><span class="dot"></span>Educational series development</li>
+          <li><span class="dot"></span>Platform-ready deliverables (YouTube, streaming)</li>
+          <li><span class="dot"></span>Multi-language versioning</li>
+        </ul>
+        <a href="contact.html" class="btn-primary">Get a Quote <i data-lucide="arrow-right" style="width:15px;height:15px;"></i></a>
+      </div>
+    </div>
+
+    <!-- Service 3: Character Animation -->
+    <div class="grid lg:grid-cols-2 gap-16 items-center mb-28 reveal">
+      <div>
+        <div class="section-label">03 — Core Service</div>
+        <h2 style="font-size:clamp(2rem,4vw,3rem);font-weight:900;line-height:1.1;color:var(--ink);margin-bottom:1.25rem;">Character Animation &<br>Short-Form Content</h2>
+        <p class="text-gray-400 leading-relaxed mb-6">From expressive character rigs to full comedy series, we bring personalities to life. Our in-house rig pipeline (Auto-Rig Pro + custom tooling) means faster turnarounds.</p>
+        <ul class="feature-list" style="list-style:none;padding:0;margin:0 0 2rem;">
+          <li><span class="dot"></span>Full character rigging with custom controllers</li>
+          <li><span class="dot"></span>Facial animation and lipsync</li>
+          <li><span class="dot"></span>Comedy and dramatic performance</li>
+          <li><span class="dot"></span>Short-form YouTube and social content</li>
+          <li><span class="dot"></span>Adult animation (Hindi/Hinglish)</li>
+        </ul>
+        <a href="contact.html" class="btn-primary">Get a Quote <i data-lucide="arrow-right" style="width:15px;height:15px;"></i></a>
+      </div>
+      <div>
+        <div style="aspect-ratio:4/3;border-radius:24px;overflow:hidden;position:relative;background:#1a1a1a;">
+          <div style="position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2000&auto=format&fit=crop') center/cover;opacity:0.65;"></div>
+          <div style="position:absolute;bottom:1.5rem;left:1.5rem;">
+            <div class="pill" style="background:rgba(255,255,255,0.15);border-color:rgba(255,255,255,0.3);color:#fff;backdrop-filter:blur(8px);">Bhurji Wale Chacha</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Service 4: AI-Assisted -->
+    <div class="grid lg:grid-cols-2 gap-16 items-center mb-16 reveal">
+      <div class="order-2 lg:order-1">
+        <div style="aspect-ratio:4/3;border-radius:24px;background:var(--ink);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;">
+          <div style="position:absolute;inset:0;background:radial-gradient(circle at 30% 50%,rgba(34,197,94,0.2) 0%,transparent 60%);"></div>
+          <div style="text-align:center;position:relative;z-index:1;">
+            <div style="font-size:4rem;margin-bottom:1rem;">🤖</div>
+            <div style="color:#fff;font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;">AI + Blender</div>
+            <div style="color:rgba(255,255,255,0.5);font-size:0.9rem;margin-top:6px;">Hybrid Pipeline</div>
+          </div>
+        </div>
+      </div>
+      <div class="order-1 lg:order-2">
+        <div class="section-label">04 — Emerging Service</div>
+        <h2 style="font-size:clamp(2rem,4vw,3rem);font-weight:900;line-height:1.1;color:var(--ink);margin-bottom:1.25rem;">AI-Assisted<br>Content Production</h2>
+        <p class="text-gray-400 leading-relaxed mb-6">Our hybrid pipeline combines Blender's precision with AI tools (Kling, Grok, Runway, Pika) for high-volume, fast-turnaround content at significantly lower cost.</p>
+        <ul class="feature-list" style="list-style:none;padding:0;margin:0 0 2rem;">
+          <li><span class="dot"></span>Blender → AI motion transfer workflows</li>
+          <li><span class="dot"></span>High-volume social content (reels, shorts)</li>
+          <li><span class="dot"></span>AI-augmented explainer videos</li>
+          <li><span class="dot"></span>Rapid prototyping and concept visualization</li>
+          <li><span class="dot"></span>Consistent style guide across AI outputs</li>
+        </ul>
+        <a href="contact.html" class="btn-primary">Get a Quote <i data-lucide="arrow-right" style="width:15px;height:15px;"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TECH STACK -->
+<section style="padding:5rem 0;background:#fafafa;">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-12 reveal">
+      <div class="section-label">Our Pipeline</div>
+      <h2 style="font-size:clamp(2rem,4vw,3rem);font-weight:900;color:var(--ink);">Built on the Best Tools</h2>
+    </div>
+    <div class="flex flex-wrap gap-3 justify-center reveal">
+      <span class="tech-badge">🟠 Blender</span>
+      <span class="tech-badge">🎬 Kling AI</span>
+      <span class="tech-badge">⚡ Grok</span>
+      <span class="tech-badge">✈️ Runway ML</span>
+      <span class="tech-badge">🎥 Pika Labs</span>
+      <span class="tech-badge">🎭 Auto-Rig Pro</span>
+      <span class="tech-badge">🔧 Custom Blender Addons</span>
+      <span class="tech-badge">🎨 Substance Painter</span>
+      <span class="tech-badge">🖥️ DaVinci Resolve</span>
+      <span class="tech-badge">🔊 Adobe Audition</span>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section style="padding:5rem 0 7rem;background:#fff;">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-14 reveal">
+      <div class="section-label">How we work</div>
+      <h2 style="font-size:clamp(2rem,4vw,3rem);font-weight:900;color:var(--ink);">Our Production Process</h2>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="process-step reveal" style="flex-direction:column;gap:1rem;">
+        <div class="step-num">01</div>
+        <div>
+          <div style="font-weight:700;font-size:1rem;color:var(--ink);margin-bottom:0.5rem;">Discovery & Brief</div>
+          <p class="text-gray-400 text-sm leading-relaxed">We dive deep into your brand, audience, and goals to craft a creative brief that guides everything.</p>
+        </div>
+      </div>
+      <div class="process-step reveal" style="flex-direction:column;gap:1rem;transition-delay:0.1s">
+        <div class="step-num">02</div>
+        <div>
+          <div style="font-weight:700;font-size:1rem;color:var(--ink);margin-bottom:0.5rem;">Concept & Storyboard</div>
+          <p class="text-gray-400 text-sm leading-relaxed">Visual development, mood boards, storyboards, and animatics for client approval before production begins.</p>
+        </div>
+      </div>
+      <div class="process-step reveal" style="flex-direction:column;gap:1rem;transition-delay:0.2s">
+        <div class="step-num">03</div>
+        <div>
+          <div style="font-weight:700;font-size:1rem;color:var(--ink);margin-bottom:0.5rem;">Production</div>
+          <p class="text-gray-400 text-sm leading-relaxed">Modeling, rigging, animation, lighting, and rendering — all in Blender, all in-house, with milestone reviews.</p>
+        </div>
+      </div>
+      <div class="process-step reveal" style="flex-direction:column;gap:1rem;transition-delay:0.3s">
+        <div class="step-num">04</div>
+        <div>
+          <div style="font-weight:700;font-size:1rem;color:var(--ink);margin-bottom:0.5rem;">Delivery & Support</div>
+          <p class="text-gray-400 text-sm leading-relaxed">Final delivery in all required formats, with revision rounds included and post-delivery support.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" style="padding:5rem 0;">
+  <div class="cta-green-blob"></div>
+  <div class="max-w-3xl mx-auto px-6 text-center reveal" style="position:relative;z-index:1;">
+    <h2 style="font-size:clamp(2rem,5vw,3.5rem);font-weight:900;line-height:1.1;color:#fff;margin-bottom:1rem;">Ready to Start?</h2>
+    <p style="color:#9ca3af;margin-bottom:2rem;font-size:1.05rem;">Tell us about your project and we'll get back within 24 hours.</p>
+    <a href="contact.html" class="btn-primary" style="background:var(--green);border-color:var(--green);">Contact Us <i data-lucide="arrow-right" style="width:15px;height:15px;"></i></a>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+<script src="https://unpkg.com/lucide@latest"></script>
+<script src="js/shared.js"></script>
+</body>
+</html>

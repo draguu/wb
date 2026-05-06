@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Weybec Studio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/shared.css">
+  <style>
+    .contact-card {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 20px;
+      padding: 2rem;
+      display: flex;
+      gap: 1.25rem;
+      align-items: flex-start;
+      transition: all 0.3s;
+    }
+    .contact-card:hover {
+      border-color: #bbf7d0;
+      transform: translateY(-3px);
+      box-shadow: 0 12px 40px rgba(34,197,94,0.08);
+    }
+    .contact-icon {
+      width: 48px; height: 48px;
+      border-radius: 14px;
+      background: var(--green-pale);
+      border: 1px solid #bbf7d0;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .budget-option {
+      padding: 12px 20px;
+      border-radius: 12px;
+      border: 1.5px solid #e5e7eb;
+      background: #fafafa;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--muted);
+      text-align: center;
+    }
+    .budget-option:hover { border-color: var(--green); color: var(--green-mid); background: var(--green-pale); }
+    .budget-option.selected { border-color: var(--green); background: var(--green-pale); color: var(--green-mid); font-weight: 700; }
+    .service-option {
+      padding: 10px 18px;
+      border-radius: 10px;
+      border: 1.5px solid #e5e7eb;
+      background: #fafafa;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .service-option:hover { border-color: var(--green); color: var(--green-mid); }
+    .service-option.selected { border-color: var(--green); background: var(--green-pale); color: var(--green-mid); font-weight: 700; }
+    .service-option .check { display: none; }
+    .service-option.selected .check { display: inline; }
+
+    /* Success state */
+    #success-msg {
+      display: none;
+      background: var(--green-pale);
+      border: 1px solid #bbf7d0;
+      border-radius: 20px;
+      padding: 3rem;
+      text-align: center;
+    }
+
+    /* Floating label trick */
+    .field-group { position: relative; }
+
+    /* FAQ */
+    .faq-item {
+      border-bottom: 1px solid #f3f4f6;
+    }
+    .faq-question {
+      width: 100%;
+      padding: 1.25rem 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--ink);
+      text-align: left;
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+    .faq-answer.open { max-height: 200px; padding-bottom: 1.25rem; }
+    .faq-icon { transition: transform 0.3s; flex-shrink: 0; }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+  </style>
+</head>
+<body>
+<div class="frog-mark">🐸</div>
+<div id="nav-placeholder"></div>
+
+<!-- HERO -->
+<section style="padding:10rem 0 4rem;background:#fafafa;position:relative;overflow:hidden;">
+  <div style="position:absolute;top:-80px;right:-80px;width:500px;height:500px;background:radial-gradient(circle,rgba(34,197,94,0.07) 0%,transparent 65%);"></div>
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="reveal">
+      <div class="section-label">Get in touch</div>
+      <h1 style="font-size:clamp(3rem,7vw,5rem);font-weight:900;line-height:1.05;color:var(--ink);margin-bottom:1.5rem;">Start a<br><span style="color:var(--green);">Conversation.</span></h1>
+      <p class="text-gray-400 text-xl leading-relaxed max-w-xl">Tell us about your project. We respond within 24 hours and will set up a call to explore how we can bring your vision to life.</p>
+    </div>
+  </div>
+</section>
+
+<!-- MAIN CONTACT SECTION -->
+<section style="padding:4rem 0 7rem;background:#fafafa;">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid lg:grid-cols-3 gap-12">
+
+      <!-- Left: Contact info -->
+      <div class="lg:col-span-1">
+        <div class="reveal">
+          <h2 style="font-size:1.5rem;font-weight:700;color:var(--ink);margin-bottom:1.5rem;">Contact Info</h2>
+          <div style="display:flex;flex-direction:column;gap:1rem;">
+            <div class="contact-card">
+              <div class="contact-icon"><i data-lucide="mail" style="width:20px;height:20px;color:var(--green-mid)"></i></div>
+              <div>
+                <div style="font-weight:700;font-size:0.85rem;color:var(--ink);margin-bottom:4px;">Email Us</div>
+                <a href="mailto:hello@weybec.com" class="text-sm text-gray-400 hover:text-green-600 transition-colors">hello@weybec.com</a>
+              </div>
+            </div>
+            <div class="contact-card">
+              <div class="contact-icon"><i data-lucide="map-pin" style="width:20px;height:20px;color:var(--green-mid)"></i></div>
+              <div>
+                <div style="font-weight:700;font-size:0.85rem;color:var(--ink);margin-bottom:4px;">Studio Location</div>
+                <p class="text-sm text-gray-400">Vadodara, Gujarat, India</p>
+              </div>
+            </div>
+            <div class="contact-card">
+              <div class="contact-icon"><i data-lucide="clock" style="width:20px;height:20px;color:var(--green-mid)"></i></div>
+              <div>
+                <div style="font-weight:700;font-size:0.85rem;color:var(--ink);margin-bottom:4px;">Response Time</div>
+                <p class="text-sm text-gray-400">Within 24 hours, weekdays</p>
+              </div>
+            </div>
+            <div class="contact-card">
+              <div class="contact-icon"><i data-lucide="globe" style="width:20px;height:20px;color:var(--green-mid)"></i></div>
+              <div>
+                <div style="font-weight:700;font-size:0.85rem;color:var(--ink);margin-bottom:4px;">Time Zone</div>
+                <p class="text-sm text-gray-400">IST (UTC+5:30)</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Social links -->
+          <div style="margin-top:2rem;padding-top:2rem;border-top:1px solid #f3f4f6;">
+            <div style="font-weight:700;font-size:0.85rem;color:var(--ink);margin-bottom:1rem;">Find us online</div>
+            <div style="display:flex;gap:12px;">
+              <a href="#" style="width:40px;height:40px;border-radius:10px;background:#fafafa;border:1px solid #e5e7eb;display:flex;align-items:center;justify-content:center;color:#6b7280;transition:all 0.2s;" 
+                 onmouseover="this.style.borderColor='var(--green)';this.style.color='var(--green-mid)'"
+                 onmouseout="this.style.borderColor='#e5e7eb';this.style.color='#6b7280'">
+                <i data-lucide="instagram" style="width:16px;height:16px;"></i>
+              </a>
+              <a href="#" style="width:40px;height:40px;border-radius:10px;background:#fafafa;border:1px solid #e5e7eb;display:flex;align-items:center;justify-content:center;color:#6b7280;transition:all 0.2s;"
+                 onmouseover="this.style.borderColor='var(--green)';this.style.color='var(--green-mid)'"
+                 onmouseout="this.style.borderColor='#e5e7eb';this.style.color='#6b7280'">
+                <i data-lucide="youtube" style="width:16px;height:16px;"></i>
+              </a>
+              <a href="#" style="width:40px;height:40px;border-radius:10px;background:#fafafa;border:1px solid #e5e7eb;display:flex;align-items:center;justify-content:center;color:#6b7280;transition:all 0.2s;"
+                 onmouseover="this.style.borderColor='var(--green)';this.style.color='var(--green-mid)'"
+                 onmouseout="this.style.borderColor='#e5e7eb';this.style.color='#6b7280'">
+                <i data-lucide="linkedin" style="width:16px;height:16px;"></i>
+              </a>
+              <a href="#" style="width:40px;height:40px;border-radius:10px;background:#fafafa;border:1px solid #e5e7eb;display:flex;align-items:center;justify-content:center;color:#6b7280;transition:all 0.2s;"
+                 onmouseover="this.style.borderColor='var(--green)';this.style.color='var(--green-mid)'"
+                 onmouseout="this.style.borderColor='#e5e7eb';this.style.color='#6b7280'">
+                <i data-lucide="twitter" style="width:16px;height:16px;"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Availability badge -->
+          <div style="margin-top:2rem;padding:1.25rem;border-radius:16px;background:var(--green-pale);border:1px solid #bbf7d0;">
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
+              <span class="pulse-dot"></span>
+              <span style="font-weight:700;font-size:0.85rem;color:var(--green-mid);">Currently Available</span>
+            </div>
+            <p class="text-xs text-gray-400 leading-relaxed">We're accepting new projects starting immediately. Limited slots available for Q3 2026.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Form -->
+      <div class="lg:col-span-2 reveal" style="transition-delay:0.2s">
+        <div style="background:#fff;border:1px solid #e5e7eb;border-radius:24px;padding:2.5rem;">
+          <h2 style="font-size:1.5rem;font-weight:700;color:var(--ink);margin-bottom:0.5rem;">Tell Us About Your Project</h2>
+          <p class="text-gray-400 text-sm mb-2rem" style="margin-bottom:2rem;">Fill in the details below and we'll get back to you within 24 hours.</p>
+
+          <!-- Success message (hidden by default) -->
+          <div id="success-msg">
+            <div style="font-size:3rem;margin-bottom:1rem;">🎉</div>
+            <h3 style="font-size:1.5rem;font-weight:700;color:var(--ink);margin-bottom:0.5rem;">Message Sent!</h3>
+            <p class="text-gray-400">Thanks for reaching out. We'll get back to you within 24 hours. Meanwhile, check out our latest work.</p>
+            <a href="work.html" class="btn-primary" style="margin-top:1.5rem;display:inline-flex;">View Our Work</a>
+          </div>
+
+          <form id="contact-form" novalidate>
+            <!-- Name + Email row -->
+            <div class="grid sm:grid-cols-2 gap-5 mb-5">
+              <div class="field-group">
+                <label class="form-label" for="name">Full Name <span style="color:var(--green)">*</span></label>
+                <input id="name" name="name" type="text" class="form-field" placeholder="Ravi Sharma" required>
+                <div class="field-error" style="display:none;color:#ef4444;font-size:0.8rem;margin-top:4px;">Please enter your name.</div>
+              </div>
+              <div class="field-group">
+                <label class="form-label" for="email">Email Address <span style="color:var(--green)">*</span></label>
+                <input id="email" name="email" type="email" class="form-field" placeholder="ravi@yourcompany.com" required>
+                <div class="field-error" style="display:none;color:#ef4444;font-size:0.8rem;margin-top:4px;">Please enter a valid email.</div>
+              </div>
+            </div>
+
+            <!-- Company + Phone row -->
+            <div class="grid sm:grid-cols-2 gap-5 mb-5">
+              <div class="field-group">
+                <label class="form-label" for="company">Company / Brand</label>
+                <input id="company" name="company" type="text" class="form-field" placeholder="Your Company">
+              </div>
+              <div class="field-group">
+                <label class="form-label" for="phone">Phone / WhatsApp</label>
+                <input id="phone" name="phone" type="tel" class="form-field" placeholder="+91 98765 43210">
+              </div>
+            </div>
+
+            <!-- Service selection -->
+            <div class="mb-5">
+              <label class="form-label">Services Needed</label>
+              <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;">
+                <button type="button" class="service-option" data-service="3D Ad Films">
+                  <i data-lucide="check" class="check" style="width:12px;height:12px;"></i>3D Ad Films
+                </button>
+                <button type="button" class="service-option" data-service="Character Animation">
+                  <i data-lucide="check" class="check" style="width:12px;height:12px;"></i>Character Animation
+                </button>
+                <button type="button" class="service-option" data-service="Kids Content">
+                  <i data-lucide="check" class="check" style="width:12px;height:12px;"></i>Kids Content
+                </button>
+                <button type="button" class="service-option" data-service="Motion Graphics">
+                  <i data-lucide="check" class="check" style="width:12px;height:12px;"></i>Motion Graphics
+                </button>
+                <button type="button" class="service-option" data-service="Visual Effects">
+                  <i data-lucide="check" class="check" style="width:12px;height:12px;"></i>Visual Effects
+                </button>
+                <button type="button" class="service-option" data-service="AI-Assisted Content">
+                  <i data-lucide="check" class="check" style="width:12px;height:12px;"></i>AI-Assisted Content
+                </button>
+                <button type="button" class="service-option" data-service="Other / Not Sure">
+                  <i data-lucide="check" class="check" style="width:12px;height:12px;"></i>Other / Not Sure
+                </button>
+              </div>
+              <input type="hidden" id="services-hidden" name="services">
+            </div>
+
+            <!-- Budget -->
+            <div class="mb-5">
+              <label class="form-label">Approximate Budget</label>
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-2">
+                <div class="budget-option" data-budget="Under ₹1L">Under ₹1L</div>
+                <div class="budget-option" data-budget="₹1L – ₹5L">₹1L – ₹5L</div>
+                <div class="budget-option" data-budget="₹5L – ₹20L">₹5L – ₹20L</div>
+                <div class="budget-option" data-budget="₹20L+">₹20L+</div>
+              </div>
+              <input type="hidden" id="budget-hidden" name="budget">
+            </div>
+
+            <!-- Timeline -->
+            <div class="mb-5">
+              <label class="form-label" for="timeline">Desired Timeline</label>
+              <select id="timeline" name="timeline" class="form-field">
+                <option value="" disabled selected>Select a timeline</option>
+                <option>ASAP (Rush — within 2 weeks)</option>
+                <option>1 month</option>
+                <option>2–3 months</option>
+                <option>3–6 months</option>
+                <option>6+ months / Ongoing</option>
+                <option>Flexible</option>
+              </select>
+            </div>
+
+            <!-- Message -->
+            <div class="mb-6">
+              <label class="form-label" for="message">Project Brief <span style="color:var(--green)">*</span></label>
+              <textarea id="message" name="message" class="form-field" rows="5" placeholder="Tell us about your project — what do you want to create, who is the audience, any references or inspiration you have in mind..." required style="resize:vertical;min-height:120px;"></textarea>
+              <div class="field-error" id="message-error" style="display:none;color:#ef4444;font-size:0.8rem;margin-top:4px;">Please tell us a bit about your project.</div>
+            </div>
+
+            <!-- How did you find us -->
+            <div class="mb-6">
+              <label class="form-label" for="source">How Did You Find Us?</label>
+              <select id="source" name="source" class="form-field">
+                <option value="" disabled selected>Select an option</option>
+                <option>Google Search</option>
+                <option>LinkedIn</option>
+                <option>YouTube</option>
+                <option>Instagram</option>
+                <option>Referral / Word of mouth</option>
+                <option>Quora</option>
+                <option>Other</option>
+              </select>
+            </div>
+
+            <!-- Submit -->
+            <button type="submit" id="submit-btn" class="btn-primary w-full justify-center" style="font-size:1rem;padding:16px 32px;">
+              <span id="submit-text" style="display:flex;align-items:center;gap:8px;">
+                <i data-lucide="send" style="width:17px;height:17px;"></i>
+                Send Message
+              </span>
+              <span id="submit-loading" style="display:none;align-items:center;gap:8px;">
+                Sending...
+              </span>
+            </button>
+
+            <p style="font-size:0.78rem;color:#9ca3af;margin-top:1rem;text-align:center;">
+              By submitting this form you agree to be contacted by Weybec Studio regarding your project.
+            </p>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section style="padding:5rem 0 7rem;background:#fff;">
+  <div class="max-w-3xl mx-auto px-6">
+    <div class="text-center mb-12 reveal">
+      <div class="section-label">FAQs</div>
+      <h2 style="font-size:clamp(2rem,4vw,3rem);font-weight:900;color:var(--ink);">Common Questions</h2>
+    </div>
+    <div id="faq-list" class="reveal">
+      <div class="faq-item">
+        <button class="faq-question">
+          How long does a typical 3D ad film take?
+          <i data-lucide="plus" class="faq-icon" style="width:20px;height:20px;color:var(--green-mid);"></i>
+        </button>
+        <div class="faq-answer">A standard 30–60 second 3D ad film typically takes 4–8 weeks depending on complexity — from approved storyboard to final delivery. Rush timelines are possible with prior discussion.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          Do you work with international clients?
+          <i data-lucide="plus" class="faq-icon" style="width:20px;height:20px;color:var(--green-mid);"></i>
+        </button>
+        <div class="faq-answer">Absolutely. We work with clients across the US, UK, Europe, Middle East and Southeast Asia. Our teams operate remotely and are experienced with international collaboration workflows, contracts and payments.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          What's your minimum project budget?
+          <i data-lucide="plus" class="faq-icon" style="width:20px;height:20px;color:var(--green-mid);"></i>
+        </button>
+        <div class="faq-answer">Our minimum engagement starts at ₹50,000 for short-form content. Full 3D ad films typically start from ₹1.5L. Kids series co-productions are discussed on a per-episode basis.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          Do you offer content co-production / IP partnerships?
+          <i data-lucide="plus" class="faq-icon" style="width:20px;height:20px;color:var(--green-mid);"></i>
+        </button>
+        <div class="faq-answer">Yes. For kids content and original series, we're open to co-production arrangements where IP is split. We create original characters (not work-for-hire) so both parties own something valuable. Let's talk.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          What software / pipeline do you use?
+          <i data-lucide="plus" class="faq-icon" style="width:20px;height:20px;color:var(--green-mid);"></i>
+        </button>
+        <div class="faq-answer">100% Blender for 3D, compositing, and rendering. We also use Kling, Grok, Runway and Pika for AI-augmented content. DaVinci Resolve for color and final delivery. All in-house, no outsourcing.</div>
+      </div>
+      <div class="faq-item" style="border-bottom:none;">
+        <button class="faq-question">
+          What do you need from us to start?
+          <i data-lucide="plus" class="faq-icon" style="width:20px;height:20px;color:var(--green-mid);"></i>
+        </button>
+        <div class="faq-answer">A brief describing what you want to create, your target audience, any references or benchmarks, and your approximate budget and timeline. That's enough for us to come back with a proposal within 48 hours.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+<script src="https://unpkg.com/lucide@latest"></script>
+<script src="js/shared.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // Budget selection
+  document.querySelectorAll('.budget-option').forEach(el => {
+    el.addEventListener('click', () => {
+      document.querySelectorAll('.budget-option').forEach(b => b.classList.remove('selected'));
+      el.classList.add('selected');
+      document.getElementById('budget-hidden').value = el.dataset.budget;
+    });
+  });
+
+  // Service multi-select
+  const selectedServices = new Set();
+  document.querySelectorAll('.service-option').forEach(el => {
+    el.addEventListener('click', () => {
+      const svc = el.dataset.service;
+      if (selectedServices.has(svc)) {
+        selectedServices.delete(svc);
+        el.classList.remove('selected');
+      } else {
+        selectedServices.add(svc);
+        el.classList.add('selected');
+      }
+      document.getElementById('services-hidden').value = [...selectedServices].join(', ');
+      lucide.createIcons();
+    });
+  });
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.parentElement;
+      const answer = item.querySelector('.faq-answer');
+      const isOpen = item.classList.contains('open');
+      // close all
+      document.querySelectorAll('.faq-item').forEach(i => {
+        i.classList.remove('open');
+        i.querySelector('.faq-answer').classList.remove('open');
+      });
+      if (!isOpen) {
+        item.classList.add('open');
+        answer.classList.add('open');
+      }
+    });
+  });
+
+  // Form submit
+  const form = document.getElementById('contact-form');
+  const btn = document.getElementById('submit-btn');
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    let valid = true;
+
+    // Validate name
+    const name = document.getElementById('name');
+    const nameErr = name.nextElementSibling;
+    if (!name.value.trim()) { nameErr.style.display='block'; name.style.borderColor='#ef4444'; valid=false; }
+    else { nameErr.style.display='none'; name.style.borderColor=''; }
+
+    // Validate email
+    const email = document.getElementById('email');
+    const emailErr = email.nextElementSibling;
+    const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value);
+    if (!emailOk) { emailErr.style.display='block'; email.style.borderColor='#ef4444'; valid=false; }
+    else { emailErr.style.display='none'; email.style.borderColor=''; }
+
+    // Validate message
+    const msg = document.getElementById('message');
+    const msgErr = document.getElementById('message-error');
+    if (!msg.value.trim() || msg.value.trim().length < 20) { msgErr.style.display='block'; msg.style.borderColor='#ef4444'; valid=false; }
+    else { msgErr.style.display='none'; msg.style.borderColor=''; }
+
+    if (!valid) return;
+
+    // Show loading
+    document.getElementById('submit-text').style.display = 'none';
+    document.getElementById('submit-loading').style.display = 'flex';
+    btn.disabled = true;
+
+    // Simulate send (replace with actual endpoint)
+    setTimeout(() => {
+      form.style.display = 'none';
+      document.getElementById('success-msg').style.display = 'block';
+      lucide.createIcons();
+    }, 1500);
+  });
+
+  // Clear errors on input
+  ['name','email','message'].forEach(id => {
+    document.getElementById(id).addEventListener('input', function() {
+      this.style.borderColor = '';
+      const err = id === 'message' ? document.getElementById('message-error') : this.nextElementSibling;
+      if (err) err.style.display = 'none';
+    });
+  });
+});
+</script>
+</body>
+</html>

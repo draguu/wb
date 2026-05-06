@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Weybec Studio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/shared.css">
+  <style>
+    .timeline-item {
+      display: flex;
+      gap: 2rem;
+      padding: 2rem 0;
+      border-bottom: 1px solid #f3f4f6;
+      position: relative;
+    }
+    .timeline-item:last-child { border-bottom: none; }
+    .timeline-year {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: var(--green);
+      min-width: 70px;
+      flex-shrink: 0;
+    }
+    .value-card {
+      background: #fafafa;
+      border: 1px solid #e5e7eb;
+      border-radius: 20px;
+      padding: 2rem;
+      transition: all 0.3s;
+    }
+    .value-card:hover {
+      background: var(--green-pale);
+      border-color: #bbf7d0;
+      transform: translateY(-4px);
+    }
+    .member-card {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 20px;
+      overflow: hidden;
+      transition: all 0.3s;
+    }
+    .member-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(0,0,0,0.08); }
+    .member-avatar {
+      height: 260px;
+      background: var(--green-pale);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .avatar-circle {
+      width: 120px; height: 120px;
+      border-radius: 50%;
+      background: var(--green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      font-family: 'Playfair Display', serif;
+      font-weight: 900;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+<div class="frog-mark">🐸</div>
+<div id="nav-placeholder"></div>
+
+<!-- HERO -->
+<section style="padding:10rem 0 5rem;background:#fafafa;position:relative;overflow:hidden;">
+  <div style="position:absolute;top:-80px;right:-80px;width:500px;height:500px;background:radial-gradient(circle,rgba(34,197,94,0.07) 0%,transparent 65%);"></div>
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+      <div class="reveal">
+        <div class="section-label">The Studio</div>
+        <h1 style="font-size:clamp(3rem,6vw,5rem);font-weight:900;line-height:1.05;color:var(--ink);margin-bottom:1.5rem;">We're Weybec.<br><span style="color:var(--green);">Born in Blender.</span></h1>
+        <p class="text-gray-400 text-xl leading-relaxed mb-8">A premium CGI animation studio based in Vadodara, Gujarat. We've spent 10+ years building a 100% Blender-native pipeline that delivers broadcast-quality animation for brands, platforms, and original IP worldwide.</p>
+        <div class="flex flex-wrap gap-4">
+          <a href="contact.html" class="btn-primary">Work With Us <i data-lucide="arrow-right" style="width:15px;height:15px;"></i></a>
+          <a href="work.html" class="btn-outline">See Our Work</a>
+        </div>
+      </div>
+      <div class="reveal" style="transition-delay:0.2s">
+        <div style="background:var(--ink);border-radius:24px;padding:3rem;position:relative;overflow:hidden;">
+          <div style="position:absolute;inset:0;background:radial-gradient(circle at 80% 20%,rgba(34,197,94,0.15) 0%,transparent 60%);"></div>
+          <div style="position:absolute;bottom:-20px;right:-10px;font-size:8rem;opacity:0.06;">🐸</div>
+          <div class="grid grid-cols-2 gap-8 relative z-10">
+            <div>
+              <div style="font-family:'Playfair Display',serif;font-size:3rem;font-weight:900;color:var(--green);line-height:1;">10+</div>
+              <div class="text-sm font-medium mt-1" style="color:rgba(255,255,255,0.5);">Years Active</div>
+            </div>
+            <div>
+              <div style="font-family:'Playfair Display',serif;font-size:3rem;font-weight:900;color:var(--green);line-height:1;">200+</div>
+              <div class="text-sm font-medium mt-1" style="color:rgba(255,255,255,0.5);">Projects Done</div>
+            </div>
+            <div>
+              <div style="font-family:'Playfair Display',serif;font-size:3rem;font-weight:900;color:var(--green);line-height:1;">100%</div>
+              <div class="text-sm font-medium mt-1" style="color:rgba(255,255,255,0.5);">Blender Native</div>
+            </div>
+            <div>
+              <div style="font-family:'Playfair Display',serif;font-size:3rem;font-weight:900;color:var(--green);line-height:1;">∞</div>
+              <div class="text-sm font-medium mt-1" style="color:rgba(255,255,255,0.5);">Frames Rendered</div>
+            </div>
+          </div>
+          <div style="margin-top:2rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,0.1);position:relative;z-index:10;">
+            <div style="color:rgba(255,255,255,0.4);font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.75rem;">Based in</div>
+            <div style="display:flex;align-items:center;gap:8px;">
+              <i data-lucide="map-pin" style="width:16px;height:16px;color:var(--green);"></i>
+              <span style="color:#fff;font-weight:600;">Vadodara, Gujarat, India</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STORY -->
+<section style="padding:6rem 0;background:#fff;">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="max-w-3xl mx-auto">
+      <div class="section-label text-center">Our Story</div>
+      <h2 style="font-size:clamp(2rem,4vw,3rem);font-weight:900;color:var(--ink);text-align:center;margin-bottom:3rem;">A Decade of Pixels,<br>Purpose, and Persistence</h2>
+      <div class="reveal">
+        <div class="timeline-item">
+          <div class="timeline-year">2014</div>
+          <div>
+            <div style="font-weight:700;font-size:1rem;color:var(--ink);margin-bottom:6px;">Studio Founded</div>
+            <p class="text-gray-400 text-sm leading-relaxed">Pratik Solanki and Niyal Parmar co-founded Weybec Studio in Vadodara, Gujarat, with a vision to build a world-class CGI studio 100% on Blender — before it was cool.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2016</div>
+          <div>
+            <div style="font-weight:700;font-size:1rem;color:var(--ink);margin-bottom:6px;">First Blender Addons Released</div>
+            <p class="text-gray-400 text-sm leading-relaxed">We built and distributed Blender plugins to the global CG community, getting cited on Quora among India's top Blender-native studios.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2019</div>
+          <div>
+            <div style="font-weight:700;font-size:1rem;color:var(--ink);margin-bottom:6px;">Ad Films Go International</div>
+            <p class="text-gray-400 text-sm leading-relaxed">Our 3D ad film pipeline matured. We began delivering broadcast-quality commercials for FMCG, automotive, and pharma clients across India and abroad.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2022</div>
+          <div>
+            <div style="font-weight:700;font-size:1rem;color:var(--ink);margin-bottom:6px;">Original IP: Bhurji Wale Chacha</div>
+            <p class="text-gray-400 text-sm leading-relaxed">We launched our own Hindi adult animated comedy series on YouTube — original characters, original humor, original ownership.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2024</div>
+          <div>
+            <div style="font-weight:700;font-size:1rem;color:var(--ink);margin-bottom:6px;">AI-Augmented Pipeline + Kids Content Push</div>
+            <p class="text-gray-400 text-sm leading-relaxed">We integrated Kling, Grok, Runway and Pika into our pipeline and began pitching CoComelon-grade kids content to Moonbug, Warner Bros, LooLoo Kids, and more.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2026</div>
+          <div>
+            <div style="font-weight:700;font-size:1rem;color:var(--ink);margin-bottom:6px;">Custom Tooling & Global Scale</div>
+            <p class="text-gray-400 text-sm leading-relaxed">Vault asset manager, Drivers 2.0, RecordHub and a suite of in-house Blender addons powering the most efficient CGI pipeline in India. Ready for the world.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section style="padding:5rem 0;background:#fafafa;">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-14 reveal">
+      <div class="section-label">The Founders</div>
+      <h2 style="font-size:clamp(2rem,4vw,3rem);font-weight:900;color:var(--ink);">Behind the Studio</h2>
+    </div>
+    <div class="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+      <div class="member-card reveal">
+        <div class="member-avatar">
+          <div style="position:absolute;inset:0;background:linear-gradient(135deg,#f0fdf4,#dcfce7);"></div>
+          <div class="avatar-circle" style="position:relative;z-index:1;">P</div>
+        </div>
+        <div style="padding:1.75rem;">
+          <h3 style="font-size:1.2rem;font-weight:700;color:var(--ink);margin-bottom:4px;">Pratik Solanki</h3>
+          <div style="color:var(--green-mid);font-size:0.85rem;font-weight:600;margin-bottom:1rem;">Co-Founder · Technical Director</div>
+          <p class="text-gray-400 text-sm leading-relaxed mb-4">10+ years of Blender mastery. Builds the tools that power the pipeline. Also the brain behind the Vault, Drivers 2.0, and every custom addon keeping Weybec ahead.</p>
+          <div class="flex gap-3">
+            <a href="#" class="text-gray-300 hover:text-green-500 transition-colors"><i data-lucide="linkedin" style="width:16px;height:16px;"></i></a>
+            <a href="#" class="text-gray-300 hover:text-green-500 transition-colors"><i data-lucide="youtube" style="width:16px;height:16px;"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="member-card reveal" style="transition-delay:0.1s">
+        <div class="member-avatar">
+          <div style="position:absolute;inset:0;background:linear-gradient(135deg,#f0fdf4,#dcfce7);"></div>
+          <div class="avatar-circle" style="position:relative;z-index:1;">N</div>
+        </div>
+        <div style="padding:1.75rem;">
+          <h3 style="font-size:1.2rem;font-weight:700;color:var(--ink);margin-bottom:4px;">Niyal Parmar</h3>
+          <div style="color:var(--green-mid);font-size:0.85rem;font-weight:600;margin-bottom:1rem;">Co-Founder · Creative Director</div>
+          <p class="text-gray-400 text-sm leading-relaxed mb-4">The visual voice of Weybec. Brings artistic direction, client relationships, and production leadership to every frame that leaves the studio.</p>
+          <div class="flex gap-3">
+            <a href="#" class="text-gray-300 hover:text-green-500 transition-colors"><i data-lucide="linkedin" style="width:16px;height:16px;"></i></a>
+            <a href="#" class="text-gray-300 hover:text-green-500 transition-colors"><i data-lucide="instagram" style="width:16px;height:16px;"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section style="padding:5rem 0 7rem;background:#fff;">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-14 reveal">
+      <div class="section-label">What drives us</div>
+      <h2 style="font-size:clamp(2rem,4vw,3rem);font-weight:900;color:var(--ink);">Our Values</h2>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="value-card reveal">
+        <div style="font-size:2rem;margin-bottom:1rem;">🎯</div>
+        <h3 style="font-weight:700;color:var(--ink);margin-bottom:0.5rem;">Craft First</h3>
+        <p class="text-gray-400 text-sm leading-relaxed">Every frame is deliberate. We don't cut corners on quality, ever.</p>
+      </div>
+      <div class="value-card reveal" style="transition-delay:0.1s">
+        <div style="font-size:2rem;margin-bottom:1rem;">⚡</div>
+        <h3 style="font-weight:700;color:var(--ink);margin-bottom:0.5rem;">Move Fast</h3>
+        <p class="text-gray-400 text-sm leading-relaxed">AI-augmented workflows mean faster delivery without sacrificing quality.</p>
+      </div>
+      <div class="value-card reveal" style="transition-delay:0.2s">
+        <div style="font-size:2rem;margin-bottom:1rem;">🌱</div>
+        <h3 style="font-weight:700;color:var(--ink);margin-bottom:0.5rem;">Own Your IP</h3>
+        <p class="text-gray-400 text-sm leading-relaxed">We believe in building ownable characters and worlds — for you and for us.</p>
+      </div>
+      <div class="value-card reveal" style="transition-delay:0.3s">
+        <div style="font-size:2rem;margin-bottom:1rem;">🐸</div>
+        <h3 style="font-weight:700;color:var(--ink);margin-bottom:0.5rem;">Stay Weird</h3>
+        <p class="text-gray-400 text-sm leading-relaxed">The frog in the corner means we don't take ourselves too seriously. Good animation should be joyful.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" style="padding:5rem 0;">
+  <div class="cta-green-blob"></div>
+  <div class="max-w-3xl mx-auto px-6 text-center reveal" style="position:relative;z-index:1;">
+    <h2 style="font-size:clamp(2rem,5vw,3.5rem);font-weight:900;line-height:1.1;color:#fff;margin-bottom:1rem;">Let's Build Something Together</h2>
+    <p style="color:#9ca3af;margin-bottom:2rem;font-size:1.05rem;">We're always open to the right project and the right partner.</p>
+    <a href="contact.html" class="btn-primary" style="background:var(--green);border-color:var(--green);">Get in Touch <i data-lucide="arrow-right" style="width:15px;height:15px;"></i></a>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+<script src="https://unpkg.com/lucide@latest"></script>
+<script src="js/shared.js"></script>
+</body>
+</html>
