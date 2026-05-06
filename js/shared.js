@@ -2,11 +2,8 @@
 const NAV_HTML = `
 <nav id="navbar" class="py-5">
   <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
-    <a href="index.html" class="flex items-center gap-2.5">
-      <div style="width:32px;height:32px;border-radius:10px;background:var(--ink);display:flex;align-items:center;justify-content:center;">
-        <svg width="14" height="16" viewBox="0 0 14 16" fill="none"><path d="M2 1L13 8L2 15V1Z" fill="#22c55e"/></svg>
-      </div>
-      <span style="font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:var(--ink);">Weybec<span style="color:var(--green)">.</span></span>
+    <a href="index.html" class="flex items-center">
+      <img src="assets/weybec_logo_website.png" alt="Weybec Studios" style="height:52px;width:auto;display:block;">
     </a>
     <div class="hidden md:flex items-center gap-8">
       <a href="work.html"     class="nav-link text-sm font-medium text-gray-500 hover:text-green-600 transition-colors">Work</a>
@@ -32,18 +29,15 @@ const FOOTER_HTML = `
   <div class="max-w-7xl mx-auto px-6">
     <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
       <div>
-        <div style="display:flex;align-items:center;gap:8px;margin-bottom:1rem;">
-          <div style="width:26px;height:26px;border-radius:8px;background:var(--ink);display:flex;align-items:center;justify-content:center;">
-            <svg width="11" height="13" viewBox="0 0 11 13" fill="none"><path d="M1 1L10 6.5L1 12V1Z" fill="#22c55e"/></svg>
-          </div>
-          <span style="font-family:'Playfair Display',serif;font-weight:700;font-size:1.1rem;">Weybec<span style="color:var(--green)">.</span></span>
+        <div style="margin-bottom:1rem;">
+          <img src="assets/weybec_logo_website.png" alt="Weybec Studios" style="height:44px;width:auto;">
         </div>
         <p class="text-sm text-gray-400 leading-relaxed mb-4">A premium CGI animation studio dedicated to visual excellence. 100% Blender-native.</p>
-        <div style="display:flex;gap:12px;">
-          <a href="#" class="text-gray-300 hover:text-green-500 transition-colors"><i data-lucide="instagram" style="width:18px;height:18px;"></i></a>
-          <a href="#" class="text-gray-300 hover:text-green-500 transition-colors"><i data-lucide="twitter" style="width:18px;height:18px;"></i></a>
-          <a href="#" class="text-gray-300 hover:text-green-500 transition-colors"><i data-lucide="linkedin" style="width:18px;height:18px;"></i></a>
-          <a href="#" class="text-gray-300 hover:text-green-500 transition-colors"><i data-lucide="youtube" style="width:18px;height:18px;"></i></a>
+        <div style="display:flex;gap:14px;align-items:center;">
+          <a href="https://www.instagram.com/weybecstudio" target="_blank" rel="noopener" style="color:#374151;transition:color 0.2s;" onmouseover="this.style.color='#22c55e'" onmouseout="this.style.color='#374151'"><i data-lucide="instagram" style="width:20px;height:20px;"></i></a>
+          <a href="https://www.linkedin.com/in/weybecstudio" target="_blank" rel="noopener" style="color:#374151;transition:color 0.2s;" onmouseover="this.style.color='#22c55e'" onmouseout="this.style.color='#374151'"><i data-lucide="linkedin" style="width:20px;height:20px;"></i></a>
+          <a href="https://www.facebook.com/weybec" target="_blank" rel="noopener" style="color:#374151;transition:color 0.2s;" onmouseover="this.style.color='#22c55e'" onmouseout="this.style.color='#374151'"><i data-lucide="facebook" style="width:20px;height:20px;"></i></a>
+          <a href="https://www.youtube.com/@WeybecStudio" target="_blank" rel="noopener" style="color:#374151;transition:color 0.2s;" onmouseover="this.style.color='#22c55e'" onmouseout="this.style.color='#374151'"><i data-lucide="youtube" style="width:20px;height:20px;"></i></a>
         </div>
       </div>
       <div>
@@ -74,7 +68,7 @@ const FOOTER_HTML = `
           </li>
           <li style="display:flex;align-items:center;gap:8px;">
             <i data-lucide="mail" style="width:15px;height:15px;color:var(--green);flex-shrink:0;"></i>
-            <a href="mailto:hello@weybec.com" class="text-sm text-gray-400 hover:text-green-600 transition-colors">hello@weybec.com</a>
+            <a href="mailto:contact@weybec.com" class="text-sm text-gray-400 hover:text-green-600 transition-colors">contact@weybec.com</a>
           </li>
           <li style="display:flex;align-items:center;gap:8px;">
             <i data-lucide="globe" style="width:15px;height:15px;color:var(--green);flex-shrink:0;"></i>
@@ -99,24 +93,19 @@ const FOOTER_HTML = `
 </footer>`;
 
 document.addEventListener('DOMContentLoaded', () => {
-  // inject nav
   const navEl = document.getElementById('nav-placeholder');
   if (navEl) navEl.outerHTML = NAV_HTML;
 
-  // inject footer
   const footEl = document.getElementById('footer-placeholder');
   if (footEl) footEl.outerHTML = FOOTER_HTML;
 
-  // icons
   if (window.lucide) lucide.createIcons();
 
-  // navbar scroll
   const navbar = document.getElementById('navbar');
   if (navbar) {
     window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 40));
   }
 
-  // mobile menu
   const mbBtn = document.getElementById('mobile-menu-btn');
   const mbMenu = document.getElementById('mobile-menu');
   const iMenu = document.getElementById('icon-menu');
@@ -131,7 +120,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // active nav
   const path = window.location.pathname.split('/').pop();
   document.querySelectorAll('.nav-link').forEach(a => {
     if (a.getAttribute('href') === path) {
@@ -140,7 +128,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // scroll reveal
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }

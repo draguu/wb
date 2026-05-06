@@ -3,69 +3,45 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About — Weybec Studio</title>
+  <title>Studio — Weybec Studio</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/shared.css">
   <style>
     .timeline-item {
-      display: flex;
-      gap: 2rem;
-      padding: 2rem 0;
-      border-bottom: 1px solid #f3f4f6;
-      position: relative;
+      display: flex; gap: 2rem; padding: 2rem 0;
+      border-bottom: 1px solid #f3f4f6; position: relative;
     }
     .timeline-item:last-child { border-bottom: none; }
     .timeline-year {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.5rem;
-      font-weight: 900;
-      color: var(--green);
-      min-width: 70px;
-      flex-shrink: 0;
+      font-family: 'Playfair Display', serif; font-size: 1.5rem;
+      font-weight: 900; color: var(--green); min-width: 70px; flex-shrink: 0;
     }
     .value-card {
-      background: #fafafa;
-      border: 1px solid #e5e7eb;
-      border-radius: 20px;
-      padding: 2rem;
-      transition: all 0.3s;
+      background: #fafafa; border: 1px solid #e5e7eb; border-radius: 20px;
+      padding: 2rem; transition: all 0.3s;
     }
-    .value-card:hover {
-      background: var(--green-pale);
-      border-color: #bbf7d0;
-      transform: translateY(-4px);
+    .value-card:hover { background: var(--green-pale); border-color: #bbf7d0; transform: translateY(-4px); }
+    .value-icon {
+      width: 48px; height: 48px; border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1.25rem; flex-shrink: 0;
     }
     .member-card {
-      background: #fff;
-      border: 1px solid #e5e7eb;
-      border-radius: 20px;
-      overflow: hidden;
-      transition: all 0.3s;
+      background: #fff; border: 1px solid #e5e7eb; border-radius: 20px;
+      overflow: hidden; transition: all 0.3s;
     }
     .member-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(0,0,0,0.08); }
-    .member-avatar {
-      height: 260px;
+    .member-photo {
+      height: 280px; overflow: hidden; position: relative;
       background: var(--green-pale);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      overflow: hidden;
     }
-    .avatar-circle {
-      width: 120px; height: 120px;
-      border-radius: 50%;
-      background: var(--green);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 3rem;
-      font-family: 'Playfair Display', serif;
-      font-weight: 900;
-      color: #fff;
+    .member-photo img {
+      width: 100%; height: 100%; object-fit: cover; object-position: top;
+      display: block; filter: grayscale(20%); transition: filter 0.3s;
     }
+    .member-card:hover .member-photo img { filter: grayscale(0%); }
   </style>
 </head>
 <body>
@@ -121,7 +97,7 @@
   </div>
 </section>
 
-<!-- STORY -->
+<!-- STORY / TIMELINE -->
 <section style="padding:6rem 0;background:#fff;">
   <div class="max-w-7xl mx-auto px-6">
     <div class="max-w-3xl mx-auto">
@@ -132,13 +108,13 @@
           <div class="timeline-year">2014</div>
           <div>
             <div style="font-weight:700;font-size:1rem;color:var(--ink);margin-bottom:6px;">Studio Founded</div>
-            <p class="text-gray-400 text-sm leading-relaxed">Pratik Solanki and Niyal Parmar co-founded Weybec Studio in Vadodara, Gujarat, with a vision to build a world-class CGI studio 100% on Blender — before it was cool.</p>
+            <p class="text-gray-400 text-sm leading-relaxed">Pratik Solanki and Niyal Parmar co-founded Weybec Studio in Vadodara, Gujarat — with a vision to build a world-class CGI studio 100% on Blender, before it was cool.</p>
           </div>
         </div>
         <div class="timeline-item">
           <div class="timeline-year">2016</div>
           <div>
-            <div style="font-weight:700;font-size:1rem;color:var(--ink);margin-bottom:6px;">First Blender Addons Released</div>
+            <div style="font-weight:700;font-size:1rem;color:var(--ink);margin-bottom:6px;">Blender Addons for the Community</div>
             <p class="text-gray-400 text-sm leading-relaxed">We built and distributed Blender plugins to the global CG community, getting cited on Quora among India's top Blender-native studios.</p>
           </div>
         </div>
@@ -159,15 +135,15 @@
         <div class="timeline-item">
           <div class="timeline-year">2024</div>
           <div>
-            <div style="font-weight:700;font-size:1rem;color:var(--ink);margin-bottom:6px;">AI-Augmented Pipeline + Kids Content Push</div>
-            <p class="text-gray-400 text-sm leading-relaxed">We integrated Kling, Grok, Runway and Pika into our pipeline and began pitching CoComelon-grade kids content to Moonbug, Warner Bros, LooLoo Kids, and more.</p>
+            <div style="font-weight:700;font-size:1rem;color:var(--ink);margin-bottom:6px;">Working with Globally Known Brands</div>
+            <p class="text-gray-400 text-sm leading-relaxed">We delivered animation for globally recognised brands across FMCG, broadcast, and entertainment — Britannia, Zee, SonyYAY, and more — cementing our place on the international stage.</p>
           </div>
         </div>
         <div class="timeline-item">
           <div class="timeline-year">2026</div>
           <div>
-            <div style="font-weight:700;font-size:1rem;color:var(--ink);margin-bottom:6px;">Custom Tooling & Global Scale</div>
-            <p class="text-gray-400 text-sm leading-relaxed">Vault asset manager, Drivers 2.0, RecordHub and a suite of in-house Blender addons powering the most efficient CGI pipeline in India. Ready for the world.</p>
+            <div style="font-weight:700;font-size:1rem;color:var(--ink);margin-bottom:6px;">Expanding Globally</div>
+            <p class="text-gray-400 text-sm leading-relaxed">Weybec is scaling its presence beyond India — pitching original kids IP to global platforms, growing the team, and taking on international co-productions. The world is next.</p>
           </div>
         </div>
       </div>
@@ -184,32 +160,30 @@
     </div>
     <div class="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
       <div class="member-card reveal">
-        <div class="member-avatar">
-          <div style="position:absolute;inset:0;background:linear-gradient(135deg,#f0fdf4,#dcfce7);"></div>
-          <div class="avatar-circle" style="position:relative;z-index:1;">P</div>
+        <div class="member-photo">
+          <img src="assets/pratik_solanki.jpg" alt="Pratik Solanki">
         </div>
         <div style="padding:1.75rem;">
           <h3 style="font-size:1.2rem;font-weight:700;color:var(--ink);margin-bottom:4px;">Pratik Solanki</h3>
           <div style="color:var(--green-mid);font-size:0.85rem;font-weight:600;margin-bottom:1rem;">Co-Founder · Technical Director</div>
-          <p class="text-gray-400 text-sm leading-relaxed mb-4">10+ years of Blender mastery. Builds the tools that power the pipeline. Also the brain behind the Vault, Drivers 2.0, and every custom addon keeping Weybec ahead.</p>
-          <div class="flex gap-3">
-            <a href="#" class="text-gray-300 hover:text-green-500 transition-colors"><i data-lucide="linkedin" style="width:16px;height:16px;"></i></a>
-            <a href="#" class="text-gray-300 hover:text-green-500 transition-colors"><i data-lucide="youtube" style="width:16px;height:16px;"></i></a>
+          <p class="text-gray-400 text-sm leading-relaxed mb-4">10+ years of Blender mastery. Builds the tools that power the pipeline. The brain behind custom addons that keep Weybec ahead of the industry.</p>
+          <div style="display:flex;gap:12px;">
+            <a href="https://www.linkedin.com/in/weybecstudio" target="_blank" style="color:#374151;transition:color 0.2s;" onmouseover="this.style.color='#22c55e'" onmouseout="this.style.color='#374151'"><i data-lucide="linkedin" style="width:18px;height:18px;"></i></a>
+            <a href="https://www.youtube.com/@WeybecStudio" target="_blank" style="color:#374151;transition:color 0.2s;" onmouseover="this.style.color='#22c55e'" onmouseout="this.style.color='#374151'"><i data-lucide="youtube" style="width:18px;height:18px;"></i></a>
           </div>
         </div>
       </div>
       <div class="member-card reveal" style="transition-delay:0.1s">
-        <div class="member-avatar">
-          <div style="position:absolute;inset:0;background:linear-gradient(135deg,#f0fdf4,#dcfce7);"></div>
-          <div class="avatar-circle" style="position:relative;z-index:1;">N</div>
+        <div class="member-photo">
+          <img src="assets/niyal_parmar.jpg" alt="Niyal Parmar">
         </div>
         <div style="padding:1.75rem;">
           <h3 style="font-size:1.2rem;font-weight:700;color:var(--ink);margin-bottom:4px;">Niyal Parmar</h3>
           <div style="color:var(--green-mid);font-size:0.85rem;font-weight:600;margin-bottom:1rem;">Co-Founder · Creative Director</div>
           <p class="text-gray-400 text-sm leading-relaxed mb-4">The visual voice of Weybec. Brings artistic direction, client relationships, and production leadership to every frame that leaves the studio.</p>
-          <div class="flex gap-3">
-            <a href="#" class="text-gray-300 hover:text-green-500 transition-colors"><i data-lucide="linkedin" style="width:16px;height:16px;"></i></a>
-            <a href="#" class="text-gray-300 hover:text-green-500 transition-colors"><i data-lucide="instagram" style="width:16px;height:16px;"></i></a>
+          <div style="display:flex;gap:12px;">
+            <a href="https://www.linkedin.com/in/weybecstudio" target="_blank" style="color:#374151;transition:color 0.2s;" onmouseover="this.style.color='#22c55e'" onmouseout="this.style.color='#374151'"><i data-lucide="linkedin" style="width:18px;height:18px;"></i></a>
+            <a href="https://www.instagram.com/weybecstudio" target="_blank" style="color:#374151;transition:color 0.2s;" onmouseover="this.style.color='#22c55e'" onmouseout="this.style.color='#374151'"><i data-lucide="instagram" style="width:18px;height:18px;"></i></a>
           </div>
         </div>
       </div>
@@ -226,23 +200,31 @@
     </div>
     <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
       <div class="value-card reveal">
-        <div style="font-size:2rem;margin-bottom:1rem;">🎯</div>
+        <div class="value-icon" style="background:#f0fdf4;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
         <h3 style="font-weight:700;color:var(--ink);margin-bottom:0.5rem;">Craft First</h3>
         <p class="text-gray-400 text-sm leading-relaxed">Every frame is deliberate. We don't cut corners on quality, ever.</p>
       </div>
       <div class="value-card reveal" style="transition-delay:0.1s">
-        <div style="font-size:2rem;margin-bottom:1rem;">⚡</div>
+        <div class="value-icon" style="background:#f0fdf4;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        </div>
         <h3 style="font-weight:700;color:var(--ink);margin-bottom:0.5rem;">Move Fast</h3>
-        <p class="text-gray-400 text-sm leading-relaxed">AI-augmented workflows mean faster delivery without sacrificing quality.</p>
+        <p class="text-gray-400 text-sm leading-relaxed">Smart workflows mean faster delivery without sacrificing quality.</p>
       </div>
       <div class="value-card reveal" style="transition-delay:0.2s">
-        <div style="font-size:2rem;margin-bottom:1rem;">🌱</div>
+        <div class="value-icon" style="background:#f0fdf4;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
         <h3 style="font-weight:700;color:var(--ink);margin-bottom:0.5rem;">Own Your IP</h3>
         <p class="text-gray-400 text-sm leading-relaxed">We believe in building ownable characters and worlds — for you and for us.</p>
       </div>
       <div class="value-card reveal" style="transition-delay:0.3s">
-        <div style="font-size:2rem;margin-bottom:1rem;">🐸</div>
-        <h3 style="font-weight:700;color:var(--ink);margin-bottom:0.5rem;">Stay Weird</h3>
+        <div class="value-icon" style="background:#f0fdf4;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+        </div>
+        <h3 style="font-weight:700;color:var(--ink);margin-bottom:0.5rem;">Stay Playful</h3>
         <p class="text-gray-400 text-sm leading-relaxed">The frog in the corner means we don't take ourselves too seriously. Good animation should be joyful.</p>
       </div>
     </div>
